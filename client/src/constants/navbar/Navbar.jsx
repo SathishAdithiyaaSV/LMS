@@ -12,7 +12,6 @@ import {
   Card,
   IconButton,
 } from "@material-tailwind/react";
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import {
   CubeTransparentIcon,
   UserCircleIcon,
@@ -25,6 +24,7 @@ import {
   PowerIcon,
   RocketLaunchIcon,
   Bars2Icon,
+  BookOpenIcon,
 } from "@heroicons/react/24/solid";
  
 // profile menu component
@@ -193,7 +193,7 @@ function NavListMenu() {
 const navListItems = [
   {
     label: "Courses",
-    icon: AutoStoriesIcon,
+    icon: BookOpenIcon,
   },
   {
     label: "Blocks",
@@ -208,6 +208,7 @@ const navListItems = [
 function NavList() {
   return (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
+      <NavListMenu />
       {navListItems.map(({ label, icon }, key) => (
         <Typography
           key={label}
@@ -262,6 +263,9 @@ export default function ComplexNavbar() {
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
  
+        <Button size="sm" variant="text">
+          <span>Log In</span>
+        </Button>
         <ProfileMenu />
       </div>
       <MobileNav open={isNavOpen} className="overflow-scroll">
