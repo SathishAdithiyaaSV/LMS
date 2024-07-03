@@ -19,7 +19,7 @@ const NavBar = () => {
         <Box display="flex" flexGrow={1} alignItems="center">
           <img src="https://www.iiitb.ac.in/includefiles/userfiles/images/iiitb_logo.png" alt="Institute Logo" style={{ height: 40, marginRight: 10 }} />
 
-          <Button color="inherit" style={{ marginRight: 20 }}>Courses</Button>
+          <Button color="inherit" style={{ marginRight: 20 }} sx={{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}>Courses</Button>
           <Button color="inherit" style={{ marginRight: 20 }}>Grades</Button>
           <Button color="inherit" style={{ marginRight: 20 }}>Profile</Button>
         </Box>
