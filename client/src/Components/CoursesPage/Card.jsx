@@ -10,7 +10,7 @@ const CourseCard = ({ courseName, sem, grade, attendance, icon: Icon, onClick })
       sx={{
         display: 'flex',
         textAlign: 'initial',
-        width: '25%',
+        width: '20%',
         '&:hover .MuiCard-root': {
           transform: 'scale(1.05)',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',

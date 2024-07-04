@@ -1,17 +1,15 @@
 import React from 'react';
-import { Box, TextField, IconButton } from '@mui/material';
+import { Box, TextField, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = (props) => {
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
+    props.onSearch(event.target.value);
   };
 
-  const handleSearch = () => {
-    onSearch(searchTerm);
-  };
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center" my={2}>
@@ -21,12 +19,19 @@ const SearchBar = ({ onSearch }) => {
         value={searchTerm}
         onChange={handleInputChange}
         sx={{ width: '80%', maxWidth: 600 }}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+                <SearchIcon color="primary" />
+            </InputAdornment>
+          ),
+        }}
       />
-      <IconButton onClick={handleSearch} color="primary">
-        <SearchIcon />
-      </IconButton>
     </Box>
   );
 };
 
 export default SearchBar;
+
+
+

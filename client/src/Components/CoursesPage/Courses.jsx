@@ -14,6 +14,7 @@ import React from "react";
 export default function Courses() {
 
   const [courses, setCourses] = React.useState([]);
+  const [COURSES, setCOURSES] = React.useState([]);
 
   const init = async () => {
     const response = await fetch(`${backendURL}/courses`, {
@@ -22,16 +23,20 @@ export default function Courses() {
 
     const json = await response.json();
     setCourses(json.courses);
+    setCOURSES(json.courses);
   }
 
   React.useEffect(() => {
     init()
   }, []);
 
+  const searchCourses = (searchTerm) => {
+    setCourses(COURSES.filter((course) => course.name.toLowerCase().includes(searchTerm.toLowerCase())));
+  }
 
   return (
     <div>
-  <SearchBar onSearch={(searchTerm) => console.log(searchTerm)} />
+  <SearchBar onSearch={searchCourses} />
   <Box
       display="flex"
       flexWrap="wrap"
@@ -39,7 +44,7 @@ export default function Courses() {
       sx={{ p: 2 }}
     >
 
-      
+    {courses.length === 0 && <h1>No courses found</h1>}
     {courses.map((course) =>{
       return (
       <CourseCard
