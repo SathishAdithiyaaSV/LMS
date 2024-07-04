@@ -6,11 +6,13 @@ import SchoolIcon from '@mui/icons-material/School';
 import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
 import ComputerIcon from '@mui/icons-material/Computer';
+import RecentlyAccessedCourses from "./components/RecentCourses";
  
 export default function App() {
   return (
     <div>
   <ComplexNavbar />
+  <RecentlyAccessedCourses />
   <Box
       display="flex"
       flexWrap="wrap"
@@ -45,6 +47,7 @@ export default function App() {
         icon={StorageIcon}
 
       />
+
 
       </Box>;
   </div>
