@@ -1,8 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import COURSES from "./courses.js";
+import cors from "cors";
 const app = express();
 const jsonParser = bodyParser.json();
+app.use(cors());
+app.use(jsonParser);
 
 const PORT = 3000;
 

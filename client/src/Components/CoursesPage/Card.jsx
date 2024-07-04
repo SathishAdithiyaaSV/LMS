@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, CardContent, Typography, Box, ButtonBase } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 
-const CourseCard = ({ courseName, grade, icon: Icon, description, onClick }) => {
+const CourseCard = ({ courseName, sem, grade, attendance, icon: Icon, onClick }) => {
   return (
     <ButtonBase
       onClick={onClick}
@@ -26,10 +26,13 @@ const CourseCard = ({ courseName, grade, icon: Icon, description, onClick }) => 
             </Typography>
           </Box>
           <Typography variant="body2" color="textSecondary">
-            Grade: {grade}
+            SEM: {sem}
           </Typography>
           <Typography variant="body2" color="textSecondary">
-            {description}
+            GRADE: {grade}
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
+            ATTENDANCE: {attendance}
           </Typography>
         </CardContent>
       </Card>
